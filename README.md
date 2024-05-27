@@ -6,6 +6,6 @@ Collapsible Table of Contents (TOC) for AsciiDoc without external libraries and 
 
 1. Place the docinfo.html file in the same folder as your AsciiDoc file.
 
-2. Add the following attribute to the header of the AsciiDoc file: *:docinfo: shared*
+2. Add the following attribute to the header of the AsciiDoc file: **:docinfo: shared**
 
-3. Use with: *:toc: left* and *:toclevels: > 1*
+3. Use with: **:toc: left** and **:toclevels: > 1**
