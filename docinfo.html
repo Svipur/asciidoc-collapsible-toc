@@ -1,0 +1,55 @@
+<style>
+#toc.toc2 {
+	width: 235px; /* Width of the TOC sidebar. */
+	padding: 10px;
+	overflow-x: hidden;
+}
+ 
+.toc2 ul.sectlevel2 {
+	display: none;
+}
+ 
+.toc2 li.active ul.sectlevel2 {
+	display: block;
+}
+ 
+.toc2 ul.sectlevel0 > li > a:before {
+	content: none;
+}
+ 
+.toc2 ul.sectlevel2 > li > a:before {
+	content: none;
+}
+ 
+.toc2 ul.sectlevel3 > li > a:before {
+	content: none;
+}
+ 
+.toc2 ul.sectlevel1 > li:has(ul) > a:before {
+	content: '?';
+	display: inline-block;
+	width: 0.8em;
+	margin-right: 0.5em;
+	font-size: 1.2em; /* Size of the rollup triangle thingy. */
+	vertical-align: middle;
+}
+ 
+.toc2 ul.sectlevel1 > li.active:has(ul) > a:before {
+	transform: rotate(90deg);
+}
+</style>
+ 
+<script>
+function toggleTocSection(event) {
+	const target = event.target;
+	const parentLi = target.parentNode;
+	parentLi.classList.toggle('active');
+}
+ 
+document.addEventListener('DOMContentLoaded', function() {
+	const tocList = document.querySelectorAll('#toc ul.sectlevel1 > li');
+	tocList.forEach(function(item) {
+		item.addEventListener('click', toggleTocSection);
+	});
+});
+</script>
